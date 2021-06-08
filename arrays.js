@@ -1,1 +1,80 @@
-// Day 1 Blue Badge 
+// For loop challenge
+
+let foods = ["apple", "orange", "rice", "bread", "tofu"]
+
+for (let i = foods.length - 1; i > -1; i--) {
+    if (i % 2 == 1){
+        let word = foods[i]    
+        let titleCasedWord = titleCase(word)
+
+        console.log(`Foods[${i}]:` + titleCasedWord)
+    }
+}
+
+function titleCase(word){
+    
+    let first_letter = word[0].toUpperCase()
+    let rest = word.slice(1)
+
+    return first_letter + rest
+}
+
+
+
+// For..of loop challenge 
+foods = ["apple", "orange", "rice", "bread", "tofu"]
+    // Translates food to their underlying allergy
+    let allergies = ["gluten", "soy"]
+    
+    function foodLengthCheck(food){
+        return food.length > 4
+    }
+
+for (food of foods) {
+    console.log(food, foodLengthCheck(food), foodAllergyCheck(food))
+}
+
+function foodAllergyCheck(food){
+    allergyMap = {
+        bread :"gluten", 
+        tofu :"soy"
+    }
+    if (allergies.includes(allergyMap[food])) {
+        return "You can't eat" 
+    } else {
+    return "You can eat"
+    }
+}
+
+let cards = [2, 8, "K", 9, 10, 3, 4, "Q", 7, "J", 5, 6, "A"]
+let faceCards = []
+let numberedCards = []
+
+while (cards.length > 0) {
+    let card = cards.pop()
+    if (typeof card == "string"){
+        faceCards.push(card)
+    } else {
+    numberedCards.push(card)
+    }
+}
+
+console.log(faceCards)
+console.log(numberedCards)
+console.log(cards)
+
+function isFaceCard(card){
+    let result;
+    switch(card){
+        case "A":
+        case "K":
+        case "Q":
+        case "J":
+            return true
+            break
+        default: 
+            return false
+            break
+    }
+    return result 
+}
