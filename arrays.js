@@ -52,7 +52,7 @@ let numberedCards = []
 
 while (cards.length > 0) {
     let card = cards.pop()
-    if (typeof card == "string"){
+    if (isFaceCard(card)){
         faceCards.push(card)
     } else {
     numberedCards.push(card)
@@ -70,10 +70,10 @@ function isFaceCard(card){
         case "K":
         case "Q":
         case "J":
-            return true
+            result = true
             break
         default: 
-            return false
+            result = false
             break
     }
     return result 
