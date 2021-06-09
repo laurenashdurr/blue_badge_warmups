@@ -78,3 +78,28 @@ function isFaceCard(card){
     }
     return result 
 }
+
+// Challenge 4
+let animals = [
+    "bat", "tiger", "yak", 
+    "monkey", "snake", "lizard", 
+    "panda", "monkey", "hyena",
+]
+
+let zooTrip = {
+    seen: [],
+    animalSeen: 0
+}
+
+animals.forEach((animal) => {
+    console.log(`${animal} was seen today at the zoo!`)
+    if (!zooTrip.seen.includes(animal)) zooTrip.animalSeen++
+    else {console.log(animal, "is a repeat")}
+    seenAtTheZoo(animal)
+})
+
+console.log(zooTrip)
+
+function seenAtTheZoo(animal){
+    zooTrip.seen.push(animal)
+}
